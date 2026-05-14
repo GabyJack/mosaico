@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="template" client="site" method="upgrade">
+    <name>tpl_narrow</name>
+    <version>1.0.0</version>
+    <creationDate>2026-01-15</creationDate>
+    <author>Desarrollador Senior Joomla</author>
+    <authorEmail>dev@ejemplo.com</authorEmail>
+    <authorUrl>https://ejemplo.com</authorUrl>
+    <copyright>Copyright (C) 2026. Todos los derechos reservados.</copyright>
+    <license>GNU General Public License versión 2 o posterior</license>
+    <description>TPL_NARROW_XML_DESC</description>
+
+    <!-- Compatibilidad con Joomla 6 -->
+    <targetPlatform version="6.0"/>
+
+    <!-- Archivos requeridos -->
+    <files>
+        <filename>index.php</filename>
+        <filename>templateDetails.xml</filename>
+        <filename>joomla.asset.json</filename>
+        <filename>template_params.ini</filename>
+        <filename>error.php</filename>
+        <folder>css</folder>
+        <folder>js</folder>
+        <folder>images</folder>
+        <folder>html</folder>
+    </files>
+
+    <!-- Posiciones de módulos disponibles -->
+    <positions>
+        <position>header</position>
+        <position>logo</position>
+        <position>menu</position>
+        <position>search</position>
+        <position>left-top</position>
+        <position>left-bottom</position>
+        <position>right-top-l</position>
+        <position>right-top-r</position>
+        <position>right-bottom-l</position>
+        <position>right-bottom-r</position>
+        <position>footer</position>
+        <position>debug</position>
+    </positions>
+
+    <!-- Media queries para diferentes dispositivos -->
+    <media destination="templates/site/tpl_narrow" folder="media">
+        <folder>css</folder>
+        <folder>js</folder>
+        <folder>images</folder>
+    </media>
+
+    <!-- Configuración de parámetros del template -->
+    <config>
+        <fields name="params">
+            <fieldset name="basic" label="TPL_NARROW_CONFIG_BASIC">
+                <field
+                    name="logoFile"
+                    type="media"
+                    label="TPL_NARROW_CONFIG_LOGO"
+                    description="TPL_NARROW_CONFIG_LOGO_DESC"
+                    directory="images"
+                />
+                <field
+                    name="siteTitle"
+                    type="text"
+                    label="TPL_NARROW_CONFIG_SITE_TITLE"
+                    description="TPL_NARROW_CONFIG_SITE_TITLE_DESC"
+                    default="MiSitio"
+                    filter="string"
+                />
+                <field
+                    name="accentColor"
+                    type="color"
+                    label="TPL_NARROW_CONFIG_ACCENT_COLOR"
+                    description="TPL_NARROW_CONFIG_ACCENT_COLOR_DESC"
+                    default="#6c63ff"
+                />
+                <field
+                    name="enableSlider"
+                    type="radio"
+                    label="TPL_NARROW_CONFIG_ENABLE_SLIDER"
+                    description="TPL_NARROW_CONFIG_ENABLE_SLIDER_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                    name="sliderInterval"
+                    type="number"
+                    label="TPL_NARROW_CONFIG_SLIDER_INTERVAL"
+                    description="TPL_NARROW_CONFIG_SLIDER_INTERVAL_DESC"
+                    default="4000"
+                    min="1000"
+                    max="10000"
+                    step="500"
+                    showon="enableSlider:1"
+                />
+            </fieldset>
+
+            <fieldset name="advanced" label="TPL_NARROW_CONFIG_ADVANCED">
+                <field
+                    name="bootstrapLoad"
+                    type="list"
+                    label="TPL_NARROW_CONFIG_BOOTSTRAP_LOAD"
+                    description="TPL_NARROW_CONFIG_BOOTSTRAP_LOAD_DESC"
+                    default="local"
+                >
+                    <option value="local">TPL_NARROW_CONFIG_LOCAL</option>
+                    <option value="cdn">TPL_NARROW_CONFIG_CDN</option>
+                    <option value="none">TPL_NARROW_CONFIG_NONE</option>
+                </field>
+                <field
+                    name="googleFonts"
+                    type="radio"
+                    label="TPL_NARROW_CONFIG_GOOGLE_FONTS"
+                    description="TPL_NARROW_CONFIG_GOOGLE_FONTS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                    name="customCss"
+                    type="textarea"
+                    label="TPL_NARROW_CONFIG_CUSTOM_CSS"
+                    description="TPL_NARROW_CONFIG_CUSTOM_CSS_DESC"
+                    rows="10"
+                    cols="50"
+                    filter="raw"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
